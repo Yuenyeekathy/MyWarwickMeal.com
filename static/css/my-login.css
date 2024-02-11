@@ -1,0 +1,94 @@
+/*
+The draft of the code in this whole file was adapted from https://github.com/nauvalazhar/bootstrap-4-login-page 
+and I modified it according to the actual situation
+*/
+
+/* Set the height of the HTML and body to 100% */
+html,body {
+	height: 100%;
+}
+
+/* Styling for the body when it has the class 'my-login-page', setting background color and font size */
+body.my-login-page {
+	background-color: #f8f7fb;
+	font-size: 14px;
+}
+
+/* Style for the brand section, defining width, height, overflow, border-radius, margin, box-shadow, position, and z-index */
+.my-login-page .brand {
+	width: 120px;
+	height: 90px;
+	overflow: hidden;
+	border-radius: 0;
+	margin: 40px auto;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+	position: relative;
+	z-index: 1;
+}
+
+/* Style for the brand logo image, setting width to 100% */
+.my-login-page .brand img {
+	width: 100%;
+}
+
+/* Style for the card wrapper, defining width */
+.my-login-page .card-wrapper {
+	width: 400px;
+}
+
+/* Style for the card, setting border color and box shadow */
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+/* Style for the 'fat' card, setting padding */
+.my-login-page .card.fat {
+	padding: 10px;
+}
+
+/* Style for the card title, setting margin-bottom */
+.my-login-page .card .card-title {
+	margin-bottom: 30px;
+}
+
+/* Style for form controls, setting border width */
+.my-login-page .form-control {
+	border-width: 2.3px;
+}
+
+/* Style for form group labels, setting width to 100% */
+.my-login-page .form-group label {
+	width: 100%;
+}
+
+/* Style for the block button, setting padding */
+.my-login-page .btn.btn-block {
+	padding: 12px 10px;
+}
+
+/* Style for the footer, setting margin, color, and text alignment */
+.my-login-page .footer {
+	margin: 40px 0;
+	color: #888;
+	text-align: center;
+}
+
+/* Media query for screens with a maximum width of 425px, adjusting card-wrapper width and margin */
+@media screen and (max-width: 425px) {
+	.my-login-page .card-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+/* Media query for screens with a maximum width of 320px, adjusting card fat padding and card body padding */
+@media screen and (max-width: 320px) {
+	.my-login-page .card.fat {
+		padding: 0;
+	}
+
+	.my-login-page .card.fat .card-body {
+		padding: 15px;
+	}
+}

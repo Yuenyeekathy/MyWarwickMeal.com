@@ -1,0 +1,279 @@
+/*
+The draft of the code in this whole file was adapted from https://github.com/cggvuhh/My-online-meal.com 
+and I modified it according to the actual situation
+*/
+
+/* Reset margin and padding for all elements */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Enable smooth scrolling behavior for the entire HTML document */
+html{
+    scroll-behavior: smooth;
+}
+
+/* Define CSS variables using :root */
+:root{
+    --navbar-height: 59px; /* Set the variable for the navigation bar height */
+}
+
+/* Style the navigation bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+/* Create a pseudo-element before the navigation bar for a semi-transparent background */
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Style for the navigation bar logo and image */
+#logo{
+    margin: 10px 34px;
+}
+
+#logo img{
+    height: 45px;
+    margin: 3px 6px;
+    border: radius 0;
+}
+
+/* Style for the navigation bar list items */
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+/* Style for the home section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding:3px 200px;
+    min-height: 60vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+}
+
+/* Style for headings in the home section */
+#home h1{
+    color:white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+
+#home p{
+    color:white;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: 'Bree Serif', serif;
+}
+
+/* Style for the services section */
+#services {
+    margin: 34px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
+
+/* Style for individual service boxes in the services section */
+#services .box {
+    border: 2px solid brown;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f2f2f2;
+    width: calc(30% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#services .box img {
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+#services .box h2 {
+    font-family: 'Baloo Bhai', cursive;
+    line-height: 1.6;
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+#services .box a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+}
+
+#services .box a:hover {
+    color: black;
+    background-color: white;
+}
+
+#services .box a:not(:hover) h2 {
+    color: black;
+}
+
+/* Media query for screens with a maximum width of 768px, adjusting service box layout */
+@media (max-width: 768px) {
+    #services {
+        justify-content: center;
+    }
+
+    #services .box {
+        width: calc(100% - 20px);
+    }
+}
+
+/* Additional styles for the center, primary heading, and secondary heading classes */
+.center {
+    text-align: center;
+}
+
+.h-primary {
+    font-size: 2rem;
+    color: #333;
+}
+
+.h-secondary {
+    font-size: 1.5rem;
+    color: #444;
+}
+
+/* Style for the menu section */
+#menu {
+    padding: 50px;
+}
+
+/* Style for menu items and their container */
+.menu-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 90%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-item h2 {
+    margin: 15px 0;
+}
+
+.menu-item p {
+    margin: 0 15px 15px;
+}
+
+.price {
+    display: block;
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Style for the add to cart button */
+.add-to-cart-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 11px;
+    border: 7px solid white;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    bottom: 0;
+    left: 18%;
+    transform: translateX(-50%);
+}
+
+.add-to-cart-button:hover {
+    background-color: #45a049;
+}
+
+/* Style for the footer section */
+footer{
+    font-family: 'Bree Serif', serif;
+    background: rgb(245, 242, 242);
+    color: rgb(14, 11, 11);
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Utility Classes */
+.h-primary{
+    font-family: 'Bree Serif', serif;
+    font-size: 3.8rem;
+    padding: 12px;
+}
+
+.h-secondary{
+    font-family: 'Bree Serif', serif;
+    font-size: 2.3rem;
+    padding: 12px;
+}
+
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+.center{
+    text-align: center;
+    margin-top: 10px;
+}
