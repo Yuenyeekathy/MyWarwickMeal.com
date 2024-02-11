@@ -1,0 +1,100 @@
+<!-- The draft of the code in this whole file was adapted from https://github.com/MrLolok/Login-Register-Template
+and I modified it according to the actual situation -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding for the document -->
+    <meta charset="utf-8">
+
+    <!-- Set the author metadata -->
+    <meta name="author" content="Kodinger">
+
+    <!-- Set viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Set the title of the HTML document -->
+    <title>Login &mdash; MyWarwickMeal</title>
+
+    <!-- Link to the Bootstrap CSS framework from a CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Link to the custom CSS stylesheet for the login page -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my-login.css') }}">
+</head>
+
+<body class="my-login-page">
+    <!-- Main section, taking up the full height of the viewport -->
+    <section class="h-100">
+        <!-- Container to center content vertically -->
+        <div class="container h-100">
+            <!-- Row to center content horizontally -->
+            <div class="row justify-content-md-center h-100">
+                <!-- Card wrapper for login form -->
+                <div class="card-wrapper">
+                    <!-- Brand section with logo linking to the index page -->
+                    <div class="brand">
+                        <a href="{{ url_for('index') }}">
+                            <img src="https://th.bing.com/th/id/OIP._H9JZO99iWSbI60o9KPw-QHaE6?rs=1&pid=ImgDetMain" alt="logo">
+                        </a>
+                    </div>
+                    <!-- Login card with form -->
+                    <div class="card fat">
+                        <div class="card-body">
+                            <!-- Title for the login card -->
+                            <h4 class="card-title">Login</h4>
+                            <!-- Login form with validation -->
+                            <form method="POST" class="my-login-validation" novalidate="">
+                                <!-- Email input field -->
+                                <div class="form-group">
+                                    <label for="email">E-mail Address</label>
+                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                </div>
+
+                                <!-- Password input field -->
+                                <div class="form-group">
+                                    <label for="password">Password
+                                        <!-- Forgot password link -->
+                                        <a href="#" class="float-right">
+                                            Forgot Password?
+                                        </a>
+                                    </label>
+                                    <input id="password" type="password" class="form-control" name="password" required data-eye>
+                                </div>
+
+                                <!-- Remember Me checkbox -->
+                                <div class="form-group">
+                                    <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" name="remember" id="remember" class="custom-control-input">
+                                        <label for="remember" class="custom-control-label">Remember Me</label>
+                                    </div>
+                                </div>
+
+                                <!-- Login button -->
+                                <div class="form-group m-0">
+                                    <form action="{{ url_for('index') }}" method="POST">
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            Login
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <!-- Link to register page and account creation message -->
+                                <div class="mt-4 text-center">
+                                    Don't have an account? <a href="register">Create One</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Footer with copyright information -->
+                    <div class="footer">
+                        Copyright &copy; 2024 &mdash; University of Warwick 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!-- Code adapted from Jordan's python dictionary template -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Set character encoding for the document -->
+        <meta charset="UTF-8">
+        
+        <!-- Set the title of the HTML document -->
+        <title>User Database - MyWarwickMeal</title>
+        
+        <!-- Set the shortcut icon for the website -->
+        <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP._H9JZO99iWSbI60o9KPw-QHaE6?rs=1&pid=ImgDetMain" type="image/x-icon" />
+        
+        <!-- Link to the external stylesheet (CSS) for styling -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/database.css') }}">
+    </head>
+
+    <body>
+        <!-- Main heading for the user database -->
+        <h1>User Database - MyWarwickMeal</h1>
+        
+        <!-- Table to display user information -->
+        <table border="1">
+            <thead>
+                <!-- Table header with column names -->
+                <tr>
+                    <th>ID Number</th>
+                    <th>User E-mail</th>
+                    <th>User Name</th>
+                    <th>Hashed Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through items in the inventory_dict and display them in the table -->
+                {% for key, value in inventory_dict.items() %}
+                    <tr>
+                        <!-- Display the ID number -->
+                        <td>{{ key }}</td>
+                        
+                        <!-- Display the user's email -->
+                        <td>{{ value[0] }}</td>
+                        
+                        <!-- Display the user's name -->
+                        <td>{{ value[1] }}</td>
+                                                
+                        <!-- Display the user's hashed password -->
+                        <td>{{ value[2] }}</td>
+ 
+                    </tr>
+                {% endfor %}
+            </tbody>
+         </table>
+    </body>
+
+</html>
